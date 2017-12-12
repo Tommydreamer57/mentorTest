@@ -2,27 +2,57 @@ Answer each question in a written format
 
 1. What does semantic HTML mean?
 
+    Semantic HTML tags convey information about their content and make code more readable for both browsers and developers. They also contribute to SEO
+
 2. What is the box model?
+
+    The box-model is the foundation of HTML and CSS. Every element in HTML is a box with margin, border, padding, and content. Margin and border sit outside the element, while padding and content are within. Margin is the space between the element and any surrounding elements, or its parent element. Border is a border around the element with specified thickness, color, and type. Padding is the space between the border and the content of the element. Content includes any text or child elements within an element.
 
 3. What is the difference between IDs and Classes?
 
+    An ID is a specific and unique name given to an HTML element. In CSS ID's take precedence over classes for assigning style to specific elements.
+    Classes are meant to be used for many different elements, in order to give them all the same styles. Using ID's and Classes effectively can decrease the amount of CSS needed to style a page.
+
 4. What does the z-index do?
+
+    Z-index determines which elements appear in front of or on top of other elements on the page. Elements with a higher z-index are displayed above other elements. The default display for HTML is to display children over their parents and elements that are farther down in the HTML higher than elements that are farther up.
 
 5. Summarize what the keyword 'this' is used for?
 
+    This is used inside of a class to refer to entire object itself and add properties and methods to it.
+
 6. What is a callback?
+
+    A callback is a function that is given to another function to be invoked inside of that function.
 
 7. What is a closure?
 
+    A closure is a function that is returned from another function and has access to the outer functions variables after the outer function has already closed.
+
 8. How does prototype work?
+
+    The prototype object appears on any class in JavaScript and contains methods that are accessible to any object of that class. It's purpose is to save space by storing the methods all in one place instead of creating duplicates on every single object that is created.
 
 9. What is MVC?
 
+    Model-View-Controller is the architectural pattern used in Angular and other frameworks. It uses models, views, and controllers, to allow the user to interact with the web page.
+
 10. What is the component lifecycle?
+
+    The component lifecycle is the cycle each react component goes through as it is first displayed on the page, then manipulated by the user or other components, and removed from the page. Each component has methods that will fire at certain points along the lifecycle, and developers have the ability to specify what operations should be completed at those different points.
+
 
 11. What is REST?
 
+    REST stands for Representational State Transfer. It is the standard for creating servers with the CRUD methods to Create Read Update Delete data.
+
 12. Name three ways of getting data from the URL using express
+
+    In Express you can create endpoints to access specific urls and fire specified functions at each of those urls.
+    In addition to accessing the base url, an endpoint can account for any url parameters, which will be saved on the request's 'params' property.
+    An endpoint can also access queries through the request's 'query' property.
+    Data may also be sent as an object to the endpoint, which the endpoint may access through the request's 'body' property.
+
 
 create table users (
 id serial,
@@ -30,12 +60,24 @@ name varchar(255),
 email varchar(255)
 )
 
-12. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
+13. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
 
+    SELECT * FROM users
+
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
+
+    INSERT INTO users (name, email)
+    VALUES ('your name', 'fake@fake.com')
 
 -Update the newly created user's name to 'Bobby Boy':
 
+    UPDATE users
+    SET name = 'Bobby Boy'
+    WHERE email = 'fake@fake.com'
+
 -Delete the newly updated user:
+
+    DELETE FROM users
+    WHERE email = 'fake@fake.com'
